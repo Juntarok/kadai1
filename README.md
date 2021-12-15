@@ -17,9 +17,9 @@
 
 # 使用機器
 
-・rasberry pi
+・rasberry pi4
 
-・rasberry pi周辺機器
+・rasberry pi4周辺機器
 
 ・パソコン
 

@@ -52,4 +52,5 @@
 上記を入力するとLED1,LED2,LED3が消灯する
 
 # ライセンス
+https://github.com/Juntarok/kadai1/blob/bcb01cea3d9003d5fd6d476cfb9bd8b581270dd2/LICENSE
 

@@ -51,7 +51,7 @@
     $ echo 4 >/dev/myled0
 上記を入力するとLED1,LED2,LED3が消灯する
 
-# 終了
+# アンインストール
     $ sudo rmmod myled
 
 # 

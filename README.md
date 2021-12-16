@@ -7,7 +7,13 @@
 
 ・実行手順
 
-・実行コマンド
+・インストール
+
+・LED点灯、消灯
+
+・アンインストール
+
+・引用
 
 ・ライセンス
 
@@ -35,7 +41,10 @@
 ２コマンドを実行する
 
 
-# インストール手順
+# インストール
+    $ git clone https://github.com/Juntarok/kadai1.git
+    $ cd kadai1
+    $ make
     $ sudo insmod myled.ko
     $ sudo chmod 666 /dev/myled0
 
@@ -53,9 +62,11 @@
 
 # アンインストール
     $ sudo rmmod myled
-
-# 
+    
+# 引用
+   Ryuichi Ueda https://youtu.be/xQW8-FNuboo
+   Yuma Ito 共にコードを作成、上記のYouTubeの動画を参照しLEDの点灯を一つから三つに書き換えた
+   
 
 # ライセンス
 https://github.com/Juntarok/kadai1/blob/bcb01cea3d9003d5fd6d476cfb9bd8b581270dd2/LICENSE
-

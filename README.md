@@ -51,6 +51,11 @@
     $ echo 4 >/dev/myled0
 上記を入力するとLED1,LED2,LED3が消灯する
 
+# 終了
+    $ sudo rmmod myled
+
+# 
+
 # ライセンス
 https://github.com/Juntarok/kadai1/blob/bcb01cea3d9003d5fd6d476cfb9bd8b581270dd2/LICENSE
 

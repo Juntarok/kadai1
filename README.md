@@ -35,7 +35,7 @@
 ２コマンドを実行する
 
 
-# 実行コマンド
+# インストール手順
     $ sudo insmod myled.ko
     $ sudo chmod 666 /dev/myled0
 

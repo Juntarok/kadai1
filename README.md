@@ -65,6 +65,7 @@
     
 # 引用
    Ryuichi Ueda https://youtu.be/xQW8-FNuboo
+   
    Yuma Ito 共にコードを作成、上記のYouTubeの動画を参照しLEDの点灯を一つから三つに書き換えた
    
 

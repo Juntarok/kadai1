@@ -49,15 +49,11 @@
     $ sudo chmod 666 /dev/myled0
 
 # LEDを点灯
-    $ echo 1 >/dev/myled0
-    $ echo 3 >/dev/myled0
-    $ echo 5 >/dev/myled0
-上記を入力するとLED1,LED2,LED3が点灯する
+    $ echo 0 >/dev/myled0
+上記を入力するとLED1,LED2,LED3が順番に点滅する
 
 # LEDを消灯
-    $ echo 0 >/dev/myled0
     $ echo 2 >/dev/myled0
-    $ echo 4 >/dev/myled0
 上記を入力するとLED1,LED2,LED3が消灯する
 
 # アンインストール
@@ -65,8 +61,6 @@
     
 # 引用
    Ryuichi Ueda https://youtu.be/xQW8-FNuboo
-   
-   Yuma Ito 共にコードを作成、上記のYouTubeの動画を参照しLEDの点灯を一つから三つに書き換えた
    
 
 # ライセンス

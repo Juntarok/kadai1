@@ -53,11 +53,15 @@
     $ sudo chmod 666 /dev/myled0
 
 # LEDを点灯
-    $ echo 0 >/dev/myled0
-上記を入力するとLEDが10回点滅する
+    $ echo 1 >/dev/myled0
+上記を入力するとLEDがとても速く点滅する
+    $ echo 2 >/dev/myled0
+上記を入力するとLEDが速く点滅する
+    $ echo 3 >/dev/myled0
+上記を入力するとLEDがゆっくり点滅する
 
 # LEDを消灯
-    $ echo 1 >/dev/myled0
+    $ echo  >/dev/myled0
 上記を入力するとLEDが消灯する
 
 # アンインストール

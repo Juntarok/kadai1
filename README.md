@@ -55,8 +55,10 @@
 # LEDを点灯
     $ echo 1 >/dev/myled0
 上記を入力するとLEDがとても速く点滅する
+
     $ echo 2 >/dev/myled0
 上記を入力するとLEDが速く点滅する
+
     $ echo 3 >/dev/myled0
 上記を入力するとLEDがゆっくり点滅する
 

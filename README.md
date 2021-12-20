@@ -38,11 +38,15 @@
 # 実行手順
 １rasberry piの22,39のピンにジャンパー線をさす
 
-２コマンドを実行する
+2 cloneしインストールする
+
+3 コマンド
+を打ち込み実行する
+
 
 
 # インストール
-    $ git clone https://github.com/Juntarok/kadai1.git
+    $ git clone git@github.com:Juntarok/kadai1.git
     $ cd kadai1
     $ make
     $ sudo insmod myled.ko
@@ -50,7 +54,7 @@
 
 # LEDを点灯
     $ echo 0 >/dev/myled0
-上記を入力するとLEDが点滅する
+上記を入力するとLEDが10回点滅する
 
 # LEDを消灯
     $ echo 1 >/dev/myled0

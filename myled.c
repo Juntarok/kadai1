@@ -1,5 +1,5 @@
 //SPDX-License-Identifier:GPL-3.0
-/* *Copyright(c)2021 Ryuichi Uedda.Juntaro Kshima. Allrights reserved. */
+/* *Copyright(c)2021 Ryuichi Ueda.Juntaro Kshima. Allrights reserved. */
 #include <linux/module.h>
 #include <linux/fs.h>
 #include <linux/cdev.h>
@@ -25,7 +25,7 @@ static ssize_t led_write(struct file*filp, const char* buf, size_t count, loff_t
 		return -EFAULT;
 
 	if(c =='1'){
-		for(n = 0;n <= 20;++n){
+		for(n = 0;n <= 30;++n){
 			if(number == 0){
 				gpio_base[7] = 1 << 25;
 				msleep(100);
@@ -65,7 +65,6 @@ static ssize_t led_write(struct file*filp, const char* buf, size_t count, loff_t
 	}
 	return 1;
 }
-	
 
 static struct file_operations led_fops = {
 	.owner = THIS_MODULE,

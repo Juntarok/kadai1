@@ -24,23 +24,48 @@ static ssize_t led_write(struct file*filp, const char* buf, size_t count, loff_t
 	if(copy_from_user(&c, buf, sizeof(char)))
 		return -EFAULT;
 
-	if(c =='0'){
+	if(c =='1'){
+		for(n = 0;n <= 20;++n){
+			if(number == 0){
+				gpio_base[7] = 1 << 25;
+				msleep(100);
+				number = number + 1;
+			}else if(number == 1){
+				gpio_base[10] = 1 << 25;
+				msleep(100);
+				number = 0;
+			}
+		}
+	}else if(c == '2'){
 		for(n = 0;n <= 20;++n){
 			if(number == 0){
 				gpio_base[7] = 1 << 25;
 				msleep(200);
 				number = number + 1;
-			}else if(number == 1){
+			}else if(number ==1){
 				gpio_base[10] = 1 << 25;
 				msleep(200);
 				number = 0;
 			}
 		}
-	}else if(c == '1'){
+	}else if(c == '3'){
+		for(n = 0;n <= 20;++n){
+			if(number == 0){
+				gpio_base[7] = 1 << 25;
+				msleep(300);
+				number = number + 1;
+			}else if(number == 1){
+				gpio_base[10] = 1 << 25;
+				msleep(300);
+				number = 0;
+			}
+		}
+	}else if(c == '0'){
 		gpio_base[10] = 1 << 25;
 	}
 	return 1;
 }
+	
 
 static struct file_operations led_fops = {
 	.owner = THIS_MODULE,

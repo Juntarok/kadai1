@@ -73,4 +73,4 @@
    
 
 # ライセンス
-https://github.com/Juntarok/kadai1/blob/bcb01cea3d9003d5fd6d476cfb9bd8b581270dd2/LICENSE
+GPL3.0

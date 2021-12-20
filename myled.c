@@ -1,13 +1,14 @@
 //SPDX-License-Identifier:GPL-3.0
-/* *Copyright(c)2021 Ryuichi Uedda. Allrights reserved. */
+/* *Copyright(c)2021 Ryuichi Uedda.Juntaro Kshima. Allrights reserved. */
 #include <linux/module.h>
 #include <linux/fs.h>
 #include <linux/cdev.h>
 #include <linux/device.h>
 #include <linux/uaccess.h>
 #include <linux/io.h>
+#include <linux/delay.h>
 
-MODULE_AUTHOR("Ryuichi Ueda");
+MODULE_AUTHOR("Ryuichi Ueda & Juntaro Kashima");
 MODULE_DESCRIPTION("driver for LED control");
 MODULE_LICENSE("GPL");
 MODULE_VERSION("0.0.1");
@@ -19,37 +20,31 @@ static volatile u32 *gpio_base = NULL;
 
 static ssize_t led_write(struct file*filp, const char* buf, size_t count, loff_t* pos)
 {
-	char c;
+	char c, n, number;
 	if(copy_from_user(&c, buf, sizeof(char)))
 		return -EFAULT;
 
-//	printk(KERN_INFO "recerive %c\n");
-
 	if(c =='0'){
-		gpio_base[10] = 1 << 25;
+		for(n = 0;n <= 20;++n){
+			if(number == 0){
+				gpio_base[7] = 1 << 25;
+				msleep(200);
+				number = number + 1;
+			}else if(number == 1){
+				gpio_base[10] = 1 << 25;
+				msleep(200);
+				number = 0;
+			}
+		}
 	}else if(c == '1'){
-		gpio_base[7] = 1 << 25;
+		gpio_base[10] = 1 << 25;
 	}
 	return 1;
 }
 
-/*static ssize_t sushi_read(struct file* filp, char* buf, size_t count, loff_t* pos)
-{
-	int size = 0;
-	char sushi[] = {'s', 'u', 's', 'h', 'i'};
-	if(copy_to_user(buf+size, (const char *)sushi, sizeof(sushi))){
-		printk(KERN_ERR "sushi: copy_to_user failed.\n");
-		return -EFAULT;
-	}
-
-	size += sizeof(sushi);
-	return size;
-}*/
-
 static struct file_operations led_fops = {
 	.owner = THIS_MODULE,
 	.write = led_write,
-//	.read = sushi_read
 };
 
 static int __init init_mod(void)
